@@ -139,6 +139,10 @@ body {
 .nav-toggle {
   /* Botão de menu responsivo, só aparece em telas com resolução menor que 768px */
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 /* Hero Section */
@@ -273,22 +277,31 @@ body {
   background: var(--white);
 }
 
+/* Flexbox alternative for features grid */
+.feature-flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.feature-card {
+  width: 360px;
+  text-align: center;
+  padding: 30px;
+  background: var(--background-color);
+  border-radius: 16px;
+  transition: var(--transition);
+  border: 1px solid rgba(45, 80, 22, 0.08);
+}
+
+/*
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-xl);
   margin-top: var(--spacing-lg);
 }
-
-/* Flexbox alternative for features grid
-.feature-flex {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-*/
 
 .feature-card {
   text-align: center;
@@ -298,6 +311,7 @@ body {
   transition: var(--transition);
   border: 1px solid rgba(45, 80, 22, 0.08);
 }
+*/
 
 .feature-card:hover {
   transform: translateY(-8px);
@@ -453,17 +467,77 @@ html {
 }
 
 /* Responsividade */
+@media (max-width: 1190px) {
+  .feature-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 400px;
+    flex-shrink: 1;
+  }
+}
 @media (max-width: 768px) {
+  .nav-brand {
+    flex-grow: 1;
+  }
+
   .nav-menu {
-    display: none;
+    /* Posiciona o menu na tela inteira */
+    position: absolute;
+    top: 100%; /* Fica logo abaixo do header */
+    left: 0;
+    width: 100%;
+    background-color: #f7f7f7; /* Cor de fundo do menu expandido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Esconde o menu por padrão com uma transição suave */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .nav-menu.active {
+    /* Exibe o menu quando ativo */
+    max-height: 500px; /* Altura máxima para expandir o menu */
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+    /* padding: var(--spacing-lg) 0; */
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-list li:last-child a {
+    border-bottom: none;
   }
 
   .nav-toggle {
+    /* Exibe o botão do hamburguer em telas menores */
     display: block;
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    margin-right: 5px;
-    cursor: pointer;
+  }
+
+  /* Estiliza o ícone do menu hamburguer */
+  .toggle-bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: 0.4s;
   }
   
   .hero-buttons {
@@ -475,11 +549,18 @@ html {
     min-width: 200px;
     justify-content: center;
   }
+
+  .feature-flex {
+    flex-direction: column;
+    align-items: center;
+  }
   
+  /*
   .features-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
   }
+  */
   
   .footer-content {
     grid-template-columns: 1fr;

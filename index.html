@@ -7,7 +7,6 @@
     <title>CuritibaFlor - Floricultura em Curitiba</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   </head>
   <body>
     <!-- Header Fixo -->
@@ -27,9 +26,11 @@
           </ul>
         </div>
 
-        <div class="nav-toggle" id="nav-toggle">
-          <i class="fas fa-bars"></i>
-        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
         
       </nav>
     </header>
@@ -65,25 +66,19 @@
           <div class="features-grid feature-flex">
 
             <div class="feature-card">
-              <div class="feature-icon">
-                <i class="fas fa-seedling"></i>
-              </div>
+              <div class="feature-icon"></div>
               <h3>Flores Frescas</h3>
               <p>Trabalhamos apenas com flores da mais alta qualidade, sempre frescas e vibrantes.</p>
             </div>
             
             <div class="feature-card">
-              <div class="feature-icon">
-                <i class="fas fa-truck"></i>
-              </div>
+              <div class="feature-icon"></div>
               <h3>Entrega Rápida</h3>
               <p>Entregamos em toda Curitiba e região metropolitana com agilidade e cuidado.</p>
             </div>
             
             <div class="feature-card">
-              <div class="feature-icon">
-                <i class="fas fa-heart"></i>
-              </div>
+              <div class="feature-icon"></div>
               <h3>Feito com Amor</h3>
               <p>Cada arranjo é preparado com muito carinho e atenção aos detalhes.</p>
             </div>
@@ -171,8 +166,8 @@
       </div>
     </footer>
 
-    <script src="main.js"></script>
-    <!-- <script src="menu.js"></script> -->
+    <!-- <script src="main.js"></script> -->
+    <script src="menu.js"></script>
 
   </body>
 </html>
