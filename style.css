@@ -137,10 +137,8 @@ body {
 }
 
 .nav-toggle {
+  /* Botão de menu responsivo, só aparece em telas com resolução menor que 768px */
   display: none;
-  font-size: 1.25rem;
-  color: var(--primary-color);
-  cursor: pointer;
 }
 
 /* Hero Section */
@@ -281,6 +279,16 @@ body {
   gap: var(--spacing-xl);
   margin-top: var(--spacing-lg);
 }
+
+/* Flexbox alternative for features grid
+.feature-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+*/
 
 .feature-card {
   text-align: center;
@@ -449,9 +457,13 @@ html {
   .nav-menu {
     display: none;
   }
-  
+
   .nav-toggle {
     display: block;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-right: 5px;
+    cursor: pointer;
   }
   
   .hero-buttons {
