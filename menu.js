@@ -1,3 +1,5 @@
+// Script to handle the navigation menu toggle functionality
+
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
