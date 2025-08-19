@@ -2,11 +2,11 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="CuritibaFlor - Floricultura em Curitiba, oferecendo flores frescas, entrega rápida e arranjos feitos com amor. Transforme seus momentos especiais em memórias floridas.">
-    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon/floricultura.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CuritibaFlor - Floricultura em Curitiba</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleForm.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -38,7 +38,7 @@
 
     <!-- Conteúdo Principal -->
     <main>
-      <!-- Seção Hero -->
+      <!-- Seção Imagem -->
       <section class="hero" id="home">
         <div class="hero-container">
           <div class="hero-image">
@@ -54,7 +54,7 @@
               </p>
               <div class="hero-buttons">
                 <a href="#produtos" class="btn btn-primary">Ver Produtos</a>
-                <a href="#contato" class="btn btn-secondary">Fazer Pedido</a>
+                <a href="#form-contato" class="btn btn-secondary">Preencher Formulário</a>
               </div>
             </div>
           </div>
@@ -63,26 +63,72 @@
 
       <!-- Seção de Destaque -->
       <section class="features" id="sobre">
-        <div class="container">
+        <div class="container-card">
           <div class="features-grid feature-flex">
 
             <div class="feature-card">
-              <div class="feature-icon"></div>
+              <div class="feature-icon">
+                <img src="img/flor-rosa.png" alt="Flor Icon">
+              </div>
               <h3>Flores Frescas</h3>
               <p>Trabalhamos apenas com flores da mais alta qualidade, sempre frescas e vibrantes.</p>
             </div>
             
             <div class="feature-card">
-              <div class="feature-icon"></div>
+              <div class="feature-icon">
+                <img src="img/entrega-rapida.png" alt="Entrega Rápida Icon">
+              </div>
               <h3>Entrega Rápida</h3>
               <p>Entregamos em toda Curitiba e região metropolitana com agilidade e cuidado.</p>
             </div>
             
             <div class="feature-card">
-              <div class="feature-icon"></div>
+              <div class="feature-icon">
+                <img src="img/coracao.png" alt="Coração Icon">
+              </div>
               <h3>Feito com Amor</h3>
               <p>Cada arranjo é preparado com muito carinho e atenção aos detalhes.</p>
             </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="img/teste.png" alt="Escolha">
+              </div>
+              <h3>Sua melhor escolha</h3>
+              <p>Nossa floricultura busca o que há de melhor para atender a todos os momentos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Formulário -->
+      <section class="form-section" id="form-contato">
+        <div class="conteiner-principal">
+          <div class="formulario">
+            <div class="cabecalho">
+                <h3>Cadastre-se</h3>
+                <p>Preencha seus dados para receber nossas promoções</p>
+            </div>
+
+            <form id="formulario-leads">
+              <div class="campo-nome">
+                  <label for="nome">Nome completo</label>
+                  <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+              </div>
+              <div class="campo-nome">
+                  <label for="email">E-mail</label>
+                  <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+              </div>
+              <div class="campo-telefone">
+                  <label for="telefone">Telefone</label>
+                  <div class="campo-input">
+                      <input type="text" name="ddd" id="ddd" maxlength="2" placeholder="DDD" required>
+                      <input type="text" name="fone" id="fone" maxlength="9" placeholder="Telefone" required>
+                  </div>
+              </div>
+
+              <button class="btn-form" type="submit">Cadastrar</button>
+            </form>
           </div>
         </div>
       </section>
@@ -99,13 +145,13 @@
             </p>
             <div class="social-links">
               <a href="#" class="social-link">
-                <i class="fab fa-facebook-f"></i>
+                <img src="img/facebook.png" alt="Facebook">
               </a>
               <a href="#" class="social-link">
-                <i class="fab fa-instagram"></i>
+                <img src="img/instagram.png" alt="Instagram">
               </a>
               <a href="https://wa.me/5541995305680/" target="_blank" class="social-link">
-                <i class="fab fa-whatsapp"></i>
+                <img src="img/whatsapp-svgrepo-com.png" alt="Whatsapp">
               </a>
             </div>
           </div>
@@ -114,15 +160,15 @@
             <h4 class="footer-subtitle">Contato</h4>
             <div class="contact-info">
               <div class="contact-item">
-                <i class="fas fa-phone"></i>
+                <img src="img/telefone.png" alt="Fixo">
                 <span>(41) 3225-8899</span>
               </div>
               <div class="contact-item">
-                <i class="fab fa-whatsapp"></i>
+                <img src="img/whatsapp-svgrepo-com.png" alt="Celular">
                 <span>(41) 99530-5680</span>
               </div>
               <div class="contact-item">
-                <i class="fas fa-envelope"></i>
+                <img src="img/email.png" alt="Email">
                 <a class="email" href="mailto:marize@curitibaflor.com.br">marize@curitibaflor.com.br</a>
               </div>
             </div>
@@ -132,7 +178,6 @@
             <h4 class="footer-subtitle">Endereço</h4>
             <div class="address-info">
               <div class="address-item">
-                <i class="fas fa-map-marker-alt"></i>
                 <div>
                   <p>Rua Eugênio Flor, 790</p>
                   <p>Abranches - Curitiba/PR</p>
@@ -169,6 +214,7 @@
 
     <!-- <script src="main.js"></script> -->
     <script src="menu.js"></script>
+    <script src="script.js"></script>
 
   </body>
 </html>
