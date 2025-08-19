@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  /* Cores principais */
+  --primary-color: #2D5016;
+  --secondary-color: #E8B4CB;
+  --accent-color: #F4A6CD;
+  --background-color: #F5F1EB;
+  --white: #FFFFFF;
+  --text-dark: #2C2C2C;
+  --text-light: #666666;
+  --text-muted: #999999;
+
+    /* Sombras */
+  --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+  --shadow-medium: 0 4px 20px rgba(0,0,0,0.12);
+  --shadow-heavy: 0 10px 40px rgba(0,0,0,0.15);
+  
+  /* Transições */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Fontes */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  
+  /* Espaçamentos */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+}
+
+#cadastro-sucesso,
+#cadastro-erro {
+    display: none;
+    background-color: var(--background-color);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-sm);
+    text-align: center;
+    border-radius: 16px;
+    border: 1px solid rgba(45, 80, 22, 0.08);
+}
+
+#cadastro-sucesso h3,
+#cadastro-erro h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+#cadastro-sucesso p,
+#cadastro-erro p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.btn-fechar {
+    width: 50%;
+    margin: 25px 0 10px 0;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

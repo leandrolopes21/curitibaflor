@@ -2,8 +2,17 @@
 const SUPABASE_URL = 'https://kgsswckrqumyejbzspkv.supabase.co/rest/v1/Leads';
 const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtnc3N3Y2tycXVteWVqYnpzcGt2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwODU5NzQsImV4cCI6MjA2OTY2MTk3NH0.uuNjYfbEwJ6epHdWeq8jd80lcjB0mxrgu5ts3W8iJv8';
 
+const conteinerPrincipal = document.querySelector('.conteiner-principal');
+
+// Cria a constante para o formulário e as mensagens de sucesso/erro
+const divFormulario = document.getElementById('form-oculto');
+
 // Seleciona o formulário pelo ID
 const formulario = document.getElementById('formulario-leads');
+
+// Cria a constante para os elementos de sucesso e erro
+const divCadastroSucesso = document.getElementById('cadastro-sucesso');
+const divCadastroErro = document.getElementById('cadastro-erro');
 
 // Adiciona um "ouvinte" para o evento de envio do formulário
 formulario.addEventListener('submit', async (event) => {
@@ -42,11 +51,34 @@ formulario.addEventListener('submit', async (event) => {
 
         // Verifica se a requisição foi bem-sucedida
         if (response.ok) {
-            alert('Cadastro realizado com sucesso! 🎉');
-            formulario.reset(); // Limpa o formulário
+            // alert('Cadastro realizado com sucesso! 🎉');
+            divCadastroSucesso.style.display = 'block'; // Exibe a mensagem de sucesso
+            divFormulario.style.display = 'none'; // Oculta o formulário após o sucesso
+            const btnFechar = document.createElement('button');
+            btnFechar.textContent = 'Fechar';
+            btnFechar.classList.add('btn-fechar');
+            divCadastroSucesso.appendChild(btnFechar);
+            btnFechar.addEventListener('click', () => {
+                divFormulario.style.display = 'block'; // Exibe o formulário novamente
+                formulario.reset(); // Limpa o formulário
+                divCadastroSucesso.style.display = 'none'; // Oculta a mensagem de sucesso
+                btnFechar.remove(); // Remove o botão de fechar
+            });
         } else {
             const errorData = await response.json();
-            alert(`Erro ao cadastrar: ${JSON.stringify(errorData.message)}`);
+            // alert(`Erro ao cadastrar: ${JSON.stringify(errorData.message)}`);
+            divCadastroErro.style.display = 'block'; // Exibe a mensagem de erro
+            divFormulario.style.display = 'none'; // Oculta o formulário após o erro
+            const btnFechar = document.createElement('button');
+            btnFechar.textContent = 'Fechar';
+            btnFechar.classList.add('btn-fechar');
+            divCadastroErro.appendChild(btnFechar);
+            btnFechar.addEventListener('click', () => {
+                divFormulario.style.display = 'block'; // Exibe o formulário novamente
+                formulario.reset(); // Limpa o formulário
+                divCadastroErro.style.display = 'none'; // Oculta a mensagem de erro
+                btnFechar.remove(); // Remove o botão de fechar
+        });
         }
     } catch (error) {
         // Captura erros de rede ou outros problemas

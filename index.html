@@ -7,6 +7,7 @@
     <title>CuritibaFlor - Floricultura em Curitiba</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleForm.css">
+    <link rel="stylesheet" href="estiloCadastro.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -104,7 +105,7 @@
       <!-- Seção Formulário -->
       <section class="form-section" id="form-contato">
         <div class="conteiner-principal">
-          <div class="formulario">
+          <div class="formulario" id="form-oculto">
             <div class="cabecalho">
                 <h3>Cadastre-se</h3>
                 <p>Preencha seus dados para receber nossas promoções</p>
@@ -129,7 +130,19 @@
 
               <button class="btn-form" type="submit">Cadastrar</button>
             </form>
+
           </div>
+
+          <div id="cadastro-sucesso">
+            <h3>Cadastro realizado com sucesso!</h3>
+            <p>Obrigado por se cadastrar. Em breve informaremos sobre nossas promoções.</p>
+          </div>
+
+          <div id="cadastro-erro">
+            <h3>Erro no cadastro</h3>
+            <p>Ocorreu um erro ao processar seu cadastro. Por favor, tente novamente mais tarde.</p>
+          </div>
+
         </div>
       </section>
     </main>
