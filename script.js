@@ -2,6 +2,7 @@
 const SUPABASE_URL = 'https://kgsswckrqumyejbzspkv.supabase.co/rest/v1/Leads';
 const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtnc3N3Y2tycXVteWVqYnpzcGt2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwODU5NzQsImV4cCI6MjA2OTY2MTk3NH0.uuNjYfbEwJ6epHdWeq8jd80lcjB0mxrgu5ts3W8iJv8';
 
+// Elemento DOM
 const divFormulario = document.getElementById('form-oculto');
 const formulario = document.getElementById('formulario-leads');
 const divCadastroSucesso = document.getElementById('cadastro-sucesso');
