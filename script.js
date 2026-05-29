@@ -65,7 +65,8 @@ formulario.addEventListener('submit', async (event) => {
         if (response.ok) {
             gerenciarExibicaoFeedback(divCadastroSucesso);
         } else {
-            console.error('Erro na resposta do Supabase:', await response.json());
+            const errorData = await response.json();
+            console.error('Erro na resposta do Supabase:', errorData.message || errorData);
             gerenciarExibicaoFeedback(divCadastroErro);
         }
     } catch (error) {
